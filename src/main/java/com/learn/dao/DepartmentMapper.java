@@ -19,4 +19,6 @@ public interface DepartmentMapper extends BaseMapper<Department> {
      * @return
      */
     int insertDepartment(Department department);
+
+    int deleteById(Integer id);
 }

@@ -1,7 +1,5 @@
 package com.learn.listener;
 
-import com.learn.servlet.SecondServlet;
-
 import javax.servlet.*;
 import javax.servlet.annotation.WebListener;
 import javax.servlet.http.HttpServletRequest;
@@ -10,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
  * ServletRequestListener用于监听用户请求的到达
  * ServletRequestAttributeListener用于监听ServletRequest(request)范围内属性的变化
  */
-@WebListener
+//@WebListener
 public class RequestListener implements ServletRequestListener, ServletRequestAttributeListener {
 
     /**

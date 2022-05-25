@@ -6,9 +6,12 @@ import com.learn.beanpostprocessor.util.SwitchUtil;
 import com.learn.entity.Department;
 import com.learn.entity.Student;
 import com.learn.service.inner.IStudentService;
+import com.learn.service.inner.IStudentService4;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.annotation.Resource;
 
 @RequestMapping
 @Controller
@@ -40,6 +43,9 @@ public class HelloController {
     @Autowired
     private IStudentService studentService;
 
+    @Resource(name = "studentServiceImpl4")
+    private IStudentService4 iStudentService;
+
     @RequestMapping("/add")
     public void add() {
         Student student = new Student();
@@ -49,5 +55,9 @@ public class HelloController {
         student.setName("侯亮平");
         student.setSex("0");
         studentService.addAndDel(student);
+    }
+    @RequestMapping("/test")
+    public void test() {
+        iStudentService.add();
     }
 }

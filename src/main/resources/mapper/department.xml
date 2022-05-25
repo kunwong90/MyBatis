@@ -30,4 +30,9 @@
     <update id="updateIsDeleted">
         UPDATE dept SET is_deleted = is_deleted + 1 WHERE department_id=1
     </update>
+
+
+    <update id="deleteById">
+        delete from dept where department_id = #{id}
+    </update>
 </mapper>
