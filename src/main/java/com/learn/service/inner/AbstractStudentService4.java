@@ -20,15 +20,23 @@ public abstract class AbstractStudentService4 implements IStudentService4 {
 
     public final void test() {
         before();
-        self.addStudentAndDeleteDep();
+        privateMethod();
         //((AbstractStudentService4) AopContext.currentProxy()).addStudentAndDeleteDep();
         after();
     }
 
+    /**
+     * 事务生效
+     * @return
+     */
     @Override
     public int add() {
         test();
         return 0;
+    }
+
+    private void privateMethod() {
+        self.addStudentAndDeleteDep();
     }
 
     @Transactional
